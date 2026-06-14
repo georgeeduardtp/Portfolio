@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import { Box, GlobalStyles, Typography } from "@mui/material";
 import Lenis from "lenis";
+import AboutMeSection from "@/src/components/aboutMeSection";
+import FeaturedProjectSection from "@/src/components/featuredProjectSection";
 
 const marqueeItems = [
   "Java",
@@ -135,13 +137,13 @@ export default function Home() {
           overflowX: "hidden",
           overflowY: "visible",
           overscrollBehavior: "none",
-          touchAction: "pan-y",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           px: 0,
-          py: { xs: 8, md: 10 },
+          pt: { xs: 9, md: 12 },
+          pb: { xs: 9, md: 13 },
           color: "#f5f7fb",
           backgroundColor: "#05070a",
           backgroundImage: `
@@ -194,6 +196,7 @@ export default function Home() {
             gap: { xs: 5, md: 10 },
             alignItems: "center",
             textAlign: { xs: "center", md: "left" },
+            minHeight: { md: "68vh" },
           }}
         >
           <Box>
@@ -376,6 +379,9 @@ export default function Home() {
             ))}
           </Box>
         </Box>
+
+        <AboutMeSection />
+        <FeaturedProjectSection />
       </Box>
     </>
   );

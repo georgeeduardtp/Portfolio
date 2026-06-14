@@ -3,9 +3,81 @@ import CssBaseline from '@mui/material/CssBaseline';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'George Eduard Turcescu | Software Developer',
+  title: {
+    default: 'George Eduard Turcescu | Portfolio',
+    template: '%s | George Eduard Turcescu',
+  },
   description:
-    'Portfolio de George Eduard Turcescu, desarrollador Full Stack especializado en Java, Spring, Next.js y productos SaaS B2B2C.',
+    'Portfolio de George Eduard Turcescu, desarrollador Full Stack orientado a producto y arquitectura. Construyo soluciones digitales escalables con Java, Spring Boot y Next.js, aplicando criterio técnico, experiencia de usuario y foco en software mantenible.',
+  applicationName: 'George Eduard Turcescu Portfolio',
+  authors: [{ name: 'George Eduard Turcescu' }],
+  creator: 'George Eduard Turcescu',
+  publisher: 'George Eduard Turcescu',
+  keywords: [
+    'George Eduard Turcescu',
+    'Software Developer',
+    'Eduard Turcescu',
+    'George Eduard',
+    'George Turcescu',
+    'georgeeduardtp',
+    'portfolio George Eduard Turcescu',
+    'desarrollador full stack Madrid',
+    'full stack developer Madrid',
+    'software developer Madrid',
+    'desarrollador Java Madrid',
+    'desarrollador Spring Boot Madrid',
+    'desarrollador Next.js Madrid',
+    'portfolio desarrollador full stack',
+    'programador full stack junior',
+    'desarrollador software junior',
+    'desarrollador web full stack',
+    'creador de Pelu Go',
+    'creador pelugo'
+  ],
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/pelugo512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/pelugo512x512.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: ['/favicon.ico'],
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    siteName: 'George Eduard Turcescu Portfolio',
+    title: 'George Eduard Turcescu | Portfolio',
+    description:
+      'Portfolio de George Eduard Turcescu, desarrollador Full Stack orientado a producto y arquitectura. Construyo soluciones digitales escalables con Java, Spring Boot y Next.js, aplicando criterio técnico, experiencia de usuario y foco en software mantenible.',
+    images: [
+      {
+        url: '/profile.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'George Eduard Turcescu - Software Developer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'George Eduard Turcescu | Portfolio',
+    description:
+      'Portfolio de George Eduard Turcescu, desarrollador Full Stack orientado a producto y arquitectura. Construyo soluciones digitales escalables con Java, Spring Boot y Next.js, aplicando criterio técnico, experiencia de usuario y foco en software mantenible.',
+    images: ['/profile.jpeg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
