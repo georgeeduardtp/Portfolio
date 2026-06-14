@@ -159,8 +159,8 @@ export default function FeaturedProjectSection() {
         <Box
           sx={{
             position: "relative",
-            minHeight: { xs: 560, md: 470 },
-            p: { xs: 2.5, md: 2.5 },
+            minHeight: { xs: 430, sm: 500, md: 470 },
+            p: { xs: 2, md: 2.5 },
             order: { xs: 2, md: 0 },
             overflow: "hidden",
             border: "1px solid rgba(255,255,255,0.10)",
@@ -185,7 +185,7 @@ export default function FeaturedProjectSection() {
               direction="row"
               justifyContent="space-between"
               alignItems="center"
-              sx={{ mb: { xs: 3, md: 2.2 } }}
+              sx={{ mb: { xs: 1.8, md: 2.2 } }}
             >
               <Typography
                 sx={{
@@ -216,15 +216,15 @@ export default function FeaturedProjectSection() {
                 position: "relative",
                 display: "grid",
                 placeItems: "center",
-                minHeight: { xs: 250, md: 165 },
+                minHeight: { xs: 142, sm: 190, md: 165 },
               }}
             >
               <Box
                 sx={{
                   position: "absolute",
                   top: "50%",
-                  left: { xs: 110, md: 146 },
-                  right: { xs: "calc(50% + 50px)", md: "calc(50% + 58px)" },
+                  left: { xs: 86, sm: 110, md: 146 },
+                  right: { xs: "calc(50% + 38px)", sm: "calc(50% + 50px)", md: "calc(50% + 58px)" },
                   zIndex: 0,
                   height: "1px",
                   overflow: "hidden",
@@ -248,8 +248,8 @@ export default function FeaturedProjectSection() {
                 sx={{
                   position: "absolute",
                   top: "50%",
-                  left: { xs: "calc(50% + 50px)", md: "calc(50% + 58px)" },
-                  right: { xs: 110, md: 146 },
+                  left: { xs: "calc(50% + 38px)", sm: "calc(50% + 50px)", md: "calc(50% + 58px)" },
+                  right: { xs: 86, sm: 110, md: 146 },
                   zIndex: 0,
                   height: "1px",
                   overflow: "hidden",
@@ -289,8 +289,8 @@ export default function FeaturedProjectSection() {
                     top: "50%",
                     left: side.side === "left" ? { xs: 0, md: 8 } : "auto",
                     right: side.side === "right" ? { xs: 0, md: 8 } : "auto",
-                    width: { xs: 108, sm: 132, md: 138 },
-                    p: { xs: 1.15, sm: 1.4, md: 1.35 },
+                    width: { xs: 82, sm: 132, md: 138 },
+                    p: { xs: 1, sm: 1.4, md: 1.35 },
                     border: "1px solid rgba(255,255,255,0.10)",
                     backgroundColor: "rgba(5,7,10,0.52)",
                     backdropFilter: "blur(12px)",
@@ -300,7 +300,7 @@ export default function FeaturedProjectSection() {
                   <Typography
                     sx={{
                       color: "rgba(245,247,251,0.9)",
-                      fontSize: { xs: "0.82rem", sm: "0.9rem", md: "0.94rem" },
+                      fontSize: { xs: "0.72rem", sm: "0.9rem", md: "0.94rem" },
                       fontWeight: 900,
                     }}
                   >
@@ -324,7 +324,7 @@ export default function FeaturedProjectSection() {
                 sx={{
                   position: "relative",
                   zIndex: 1,
-                  width: { xs: 88, sm: 104, md: 104 },
+                  width: { xs: 72, sm: 104, md: 104 },
                   aspectRatio: "1 / 1",
                   display: "grid",
                   placeItems: "center",
@@ -354,7 +354,7 @@ export default function FeaturedProjectSection() {
                 display: "grid",
                 gridTemplateColumns: "repeat(4, 1fr)",
                 gap: 0,
-                mt: { xs: 2.2, md: 2.8 },
+                mt: { xs: 1.4, md: 2.8 },
                 overflow: "hidden",
                 borderTop: "1px solid rgba(255,255,255,0.08)",
                 borderBottom: "1px solid rgba(255,255,255,0.08)",
@@ -365,13 +365,13 @@ export default function FeaturedProjectSection() {
                   key={step}
                   sx={{
                     position: "relative",
-                    py: { xs: 1.4, md: 1 },
+                    py: { xs: 0.95, md: 1 },
                     textAlign: "center",
                     color:
                       index === 2
                         ? "rgba(91,241,196,0.88)"
                         : "rgba(216,225,237,0.66)",
-                    fontSize: { xs: "0.68rem", md: "0.66rem" },
+                    fontSize: { xs: "0.58rem", sm: "0.68rem", md: "0.66rem" },
                     fontWeight: 900,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
@@ -386,10 +386,10 @@ export default function FeaturedProjectSection() {
 
             <Box
               sx={{
-                mt: { xs: 3, md: 2.3 },
+                mt: { xs: 1.4, md: 2.3 },
                 display: "grid",
-                gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "repeat(4, 1fr)" },
-                gap: { xs: 1.2, md: 0 },
+                gridTemplateColumns: { xs: "1fr 1fr", md: "repeat(4, 1fr)" },
+                gap: { xs: 0, md: 0 },
                 borderTop: 0,
                 borderLeft: 0,
               }}
@@ -399,11 +399,11 @@ export default function FeaturedProjectSection() {
                   key={module.label}
                   sx={{
                     display: "grid",
-                    gridTemplateColumns: { xs: "34px minmax(0, 1fr)", md: "1fr" },
-                    gap: { xs: 1.2, md: 0.8 },
+                    gridTemplateColumns: { xs: "24px minmax(0, 1fr)", md: "1fr" },
+                    gap: { xs: 0.75, md: 0.8 },
                     alignItems: "start",
-                    py: { xs: 1.1, md: 1 },
-                    px: { xs: 1.2, md: 1 },
+                    py: { xs: 0.8, md: 1 },
+                    px: { xs: 0.75, md: 1 },
                     borderTop: { xs: "1px solid rgba(255,255,255,0.08)", md: 0 },
                     borderRight: 0,
                     borderBottom: "1px solid rgba(255,255,255,0.08)",
@@ -434,8 +434,8 @@ export default function FeaturedProjectSection() {
                     sx={{
                       display: "grid",
                       placeItems: "center",
-                      width: 28,
-                      height: 28,
+                      width: { xs: 22, md: 28 },
+                      height: { xs: 22, md: 28 },
                       color: "rgba(91,241,196,0.82)",
                       backgroundColor: "rgba(91,241,196,0.07)",
                       border: "1px solid rgba(91,241,196,0.14)",
@@ -443,13 +443,13 @@ export default function FeaturedProjectSection() {
                         "color 180ms ease, background-color 180ms ease, border-color 180ms ease",
                     }}
                   >
-                      <module.icon sx={{ fontSize: 15 }} />
+                      <module.icon sx={{ fontSize: { xs: 13, md: 15 } }} />
                   </Box>
                   <Box>
                     <Typography
                       sx={{
                         color: "rgba(245,247,251,0.84)",
-                        fontSize: { xs: "0.78rem", md: "0.7rem" },
+                        fontSize: { xs: "0.66rem", sm: "0.78rem", md: "0.7rem" },
                         fontWeight: 900,
                         lineHeight: 1.15,
                       }}
@@ -460,6 +460,7 @@ export default function FeaturedProjectSection() {
                       className="module-helper"
                       sx={{
                         mt: 0.45,
+                        display: { xs: "none", md: "block" },
                         color: "rgba(216,225,237,0.52)",
                         fontSize: { xs: "0.72rem", md: "0.62rem" },
                         lineHeight: 1.28,
