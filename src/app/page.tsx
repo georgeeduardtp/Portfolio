@@ -125,6 +125,22 @@ export default function Home() {
               transform: "translateX(-50%)",
             },
           },
+          "@keyframes profileOrbit": {
+            "0%": {
+              transform: "translate(-50%, -50%) rotate(0deg)",
+            },
+            "100%": {
+              transform: "translate(-50%, -50%) rotate(360deg)",
+            },
+          },
+          "@keyframes profileOrbitReverse": {
+            "0%": {
+              transform: "translate(-50%, -50%) rotate(360deg)",
+            },
+            "100%": {
+              transform: "translate(-50%, -50%) rotate(0deg)",
+            },
+          },
         }}
       />
 
@@ -188,7 +204,7 @@ export default function Home() {
             width: "100%",
             maxWidth: 1180,
             mx: "auto",
-            px: { xs: 3, md: 6 },
+            px: { xs: 2.25, md: 2 },
             display: "grid",
             gridTemplateColumns: {
               xs: "1fr",
@@ -253,8 +269,9 @@ export default function Home() {
                 lineHeight: 1.75,
               }}
             >
-              Desarrollo productos digitales con foco en arquitectura backend,
-              interfaces modernas y software mantenible.
+              Diseño y construyo productos digitales con criterio de
+              arquitectura, experiencia de usuario y foco en software
+              mantenible.
             </Typography>
           </Box>
 
@@ -262,43 +279,147 @@ export default function Home() {
             sx={{
               justifySelf: { xs: "center", md: "end" },
               position: "relative",
-              width: { xs: "min(68vw, 245px)", sm: 280, md: 340 },
+              width: { xs: "min(76vw, 282px)", sm: 320, md: 392 },
               aspectRatio: "1 / 1",
-              overflow: "hidden",
-              borderRadius: "50%",
-              p: "2px",
-              background:
-                "linear-gradient(145deg, rgba(91,241,196,0.85), rgba(64,145,255,0.28), rgba(255,255,255,0.12))",
-              boxShadow:
-                "0 34px 90px rgba(0,0,0,0.52), 0 0 80px rgba(91,241,196,0.10)",
-              "&::before": {
-                content: '""',
-                position: "absolute",
-                inset: "-36%",
-                borderRadius: "50%",
-                background:
-                  "conic-gradient(from 0deg, transparent 0deg, transparent 118deg, rgba(255,255,255,0.95) 136deg, rgba(91,241,196,0.72) 148deg, transparent 170deg, transparent 360deg)",
-                filter: "blur(1px)",
-                animation: "profileLightSweep 5.8s ease-in-out infinite",
-              },
             }}
           >
             <Box
-              component="img"
-              src="/profile.jpeg"
-              alt="George Eduard Turcescu"
               sx={{
-                position: "relative",
-                zIndex: 1,
-                display: "block",
+                position: "absolute",
+                top: "50%",
+                left: "50%",
                 width: "100%",
                 height: "100%",
-                objectFit: "cover",
-                objectPosition: "center 34%",
                 borderRadius: "50%",
-                border: "10px solid rgba(5, 7, 10, 0.92)",
+                border: "1px solid rgba(91,241,196,0.20)",
+                transform: "translate(-50%, -50%)",
+                opacity: 0.72,
               }}
             />
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                width: "112%",
+                height: "112%",
+                borderRadius: "50%",
+                borderTop: "1px solid rgba(143,183,255,0.30)",
+                borderRight: "1px solid transparent",
+                borderBottom: "1px solid rgba(91,241,196,0.16)",
+                borderLeft: "1px solid transparent",
+                animation: "profileOrbit 18s linear infinite",
+                opacity: 0.58,
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: "50%",
+                  width: 7,
+                  height: 7,
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(91,241,196,0.9)",
+                  boxShadow: "0 0 20px rgba(91,241,196,0.55)",
+                  transform: "translate(-50%, -50%)",
+                },
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: 0,
+                  left: "50%",
+                  width: 7,
+                  height: 7,
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(143,183,255,0.82)",
+                  boxShadow: "0 0 18px rgba(143,183,255,0.48)",
+                  transform: "translate(-50%, 50%)",
+                },
+              }}
+            />
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                width: "124%",
+                height: "124%",
+                borderRadius: "50%",
+                borderTop: "1px solid transparent",
+                borderRight: "1px solid rgba(91,241,196,0.18)",
+                borderBottom: "1px solid transparent",
+                borderLeft: "1px solid rgba(143,183,255,0.22)",
+                animation: "profileOrbitReverse 26s linear infinite",
+                opacity: 0.5,
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  right: 0,
+                  top: "50%",
+                  width: 6,
+                  height: 6,
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(91,241,196,0.72)",
+                  boxShadow: "0 0 16px rgba(91,241,196,0.42)",
+                  transform: "translate(50%, -50%)",
+                },
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  left: 0,
+                  top: "50%",
+                  width: 5,
+                  height: 5,
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(226,235,246,0.7)",
+                  boxShadow: "0 0 14px rgba(226,235,246,0.34)",
+                  transform: "translate(-50%, -50%)",
+                },
+              }}
+            />
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                width: { xs: "86%", sm: "87%", md: "86%" },
+                aspectRatio: "1 / 1",
+                overflow: "hidden",
+                borderRadius: "50%",
+                p: "2px",
+                background:
+                  "linear-gradient(145deg, rgba(91,241,196,0.85), rgba(64,145,255,0.28), rgba(255,255,255,0.12))",
+                boxShadow:
+                  "0 34px 90px rgba(0,0,0,0.52), 0 0 80px rgba(91,241,196,0.10)",
+                transform: "translate(-50%, -50%)",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  inset: "-36%",
+                  borderRadius: "50%",
+                  background:
+                    "conic-gradient(from 0deg, transparent 0deg, transparent 118deg, rgba(255,255,255,0.95) 136deg, rgba(91,241,196,0.72) 148deg, transparent 170deg, transparent 360deg)",
+                  filter: "blur(1px)",
+                  animation: "profileLightSweep 5.8s ease-in-out infinite",
+                },
+              }}
+            >
+              <Box
+                component="img"
+                src="/profile.jpeg"
+                alt="George Eduard Turcescu"
+                sx={{
+                  position: "relative",
+                  zIndex: 1,
+                  display: "block",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center 34%",
+                  borderRadius: "50%",
+                  border: "10px solid rgba(5, 7, 10, 0.92)",
+                }}
+              />
+            </Box>
           </Box>
         </Box>
 
