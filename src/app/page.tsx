@@ -5,6 +5,7 @@ import { Box, GlobalStyles, Typography } from "@mui/material";
 import Lenis from "lenis";
 import AboutMeSection from "@/src/components/aboutMeSection";
 import FeaturedProjectSection from "@/src/components/featuredProjectSection";
+import WelcomeOverlay from "@/src/components/welcomeOverlay";
 
 const marqueeItems = [
   "Java",
@@ -383,6 +384,7 @@ export default function Home() {
         <AboutMeSection />
         <FeaturedProjectSection />
       </Box>
+      <WelcomeOverlay />
     </>
   );
 }
