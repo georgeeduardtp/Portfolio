@@ -56,6 +56,25 @@ const detailCards = [
   },
 ];
 
+const profilePillars = [
+  {
+    label: "Arquitectura",
+    text: "Separo dominio, casos de uso e infraestructura para que el sistema sea claro, mantenible y facil de evolucionar.",
+  },
+  {
+    label: "Producto",
+    text: "Antes de construir intento entender el problema, el usuario, las restricciones y el impacto real de cada decision.",
+  },
+  {
+    label: "Calidad",
+    text: "Me fijo en la legibilidad, la separacion de responsabilidades, SOLID y en que el codigo no se convierta en deuda innecesaria.",
+  },
+  {
+    label: "Aprendizaje",
+    text: "Soy autocritico, pregunto y aprovecho cada proyecto para ganar criterio tecnico y aprender de perfiles con mas experiencia.",
+  },
+];
+
 export default function AboutMeSection() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -85,8 +104,8 @@ export default function AboutMeSection() {
           maxWidth: 1320,
           mx: "auto",
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "minmax(420px, 0.92fr) minmax(0, 1fr)" },
-          gap: { xs: 3, md: 7 },
+          gridTemplateColumns: { xs: "1fr", md: "minmax(560px, 0.95fr) minmax(0, 1fr)" },
+          gap: { xs: 3, md: 5 },
           alignItems: "start",
         }}
       >
@@ -131,14 +150,19 @@ export default function AboutMeSection() {
             variant="h2"
             sx={{
               m: 0,
+              maxWidth: { xs: 360, md: 620 },
               color: "rgba(245, 247, 251, 0.96)",
-              fontSize: { xs: "2rem", md: "4rem" },
+              fontSize: { xs: "2rem", md: "3.25rem" },
               fontWeight: 900,
               lineHeight: { xs: 1.03, md: 0.98 },
               letterSpacing: 0,
+              "& span": {
+                display: "block",
+              },
             }}
           >
-            Perfil full stack con criterio de producto.
+            <span>Arquitectura, producto y</span>
+            <span>aprendizaje constante.</span>
           </Typography>
 
           <Stack spacing={{ xs: 1.4, md: 1.75 }} sx={{ mt: { xs: 2, md: 3 } }}>
@@ -149,8 +173,10 @@ export default function AboutMeSection() {
                 lineHeight: { xs: 1.62, md: 1.75 },
               }}
             >
-              Construyo software mantenible desde la arquitectura backend hasta
-              la experiencia de usuario.
+              Soy desarrollador Full Stack orientado a producto, con base en
+              Java, Spring Boot, Next.js, TypeScript y arquitectura hexagonal.
+              Pienso el software desde el dominio: reglas de negocio, casos de
+              uso, datos, seguridad y experiencia de usuario.
             </Typography>
             <Typography
               sx={{
@@ -159,8 +185,9 @@ export default function AboutMeSection() {
                 lineHeight: { xs: 1.62, md: 1.75 },
               }}
             >
-              Me interesa que cada decision tecnica tenga sentido para el
-              producto: sistemas claros, escalables y preparados para crecer.
+              Me interesa construir sistemas claros, mantenibles y preparados
+              para crecer, separando responsabilidades y evitando que la logica
+              de negocio quede mezclada con detalles de infraestructura.
             </Typography>
             <Typography
               sx={{
@@ -169,9 +196,20 @@ export default function AboutMeSection() {
                 lineHeight: { xs: 1.62, md: 1.75 },
               }}
             >
-              Me gusta trabajar en equipo, aprender de perfiles con mas
-              experiencia y aprovechar cada proyecto para mejorar mi criterio
-              tecnico y profesional.
+              Me importa entender el por que antes de construir: que necesita
+              el usuario, que restricciones tiene el sistema y que decision
+              tecnica reduce complejidad a futuro.
+            </Typography>
+            <Typography
+              sx={{
+                color: "rgba(216, 225, 237, 0.62)",
+                fontSize: { xs: "0.96rem", md: "1.08rem" },
+                lineHeight: { xs: 1.62, md: 1.75 },
+              }}
+            >
+              Trabajo bien en equipo, pregunto, soy autocritico y aprovecho
+              cada oportunidad para ganar criterio, aprender de perfiles con
+              mas experiencia y mejorar mi forma de construir software.
             </Typography>
 
           </Stack>
@@ -517,15 +555,18 @@ export default function AboutMeSection() {
         maxWidth="md"
         PaperProps={{
           sx: {
-            width: { xs: "calc(100% - 28px)", md: "760px" },
+            width: { xs: "calc(100% - 28px)", md: "940px" },
+            maxWidth: { xs: "calc(100% - 28px)", md: "940px" },
+            maxHeight: { xs: "88vh", md: "86vh" },
             m: 0,
             overflow: "hidden",
             color: "rgba(245, 247, 251, 0.94)",
-            borderRadius: 3,
-            border: "1px solid rgba(255,255,255,0.12)",
+            borderRadius: { xs: 2, md: 3 },
+            border: "1px solid rgba(91,241,196,0.18)",
             background:
-              "linear-gradient(145deg, rgba(10,15,23,0.98), rgba(5,7,10,0.98))",
-            boxShadow: "0 34px 120px rgba(0,0,0,0.62)",
+              "linear-gradient(145deg, rgba(8,13,20,0.98), rgba(3,5,8,0.98))",
+            boxShadow:
+              "0 34px 120px rgba(0,0,0,0.68), 0 0 90px rgba(91,241,196,0.08)",
           },
         }}
         slotProps={{
@@ -538,16 +579,38 @@ export default function AboutMeSection() {
         }}
       >
         <Box
+          onWheelCapture={(event) => event.stopPropagation()}
+          onTouchMoveCapture={(event) => event.stopPropagation()}
           sx={{
             position: "relative",
+            maxHeight: { xs: "88vh", md: "86vh" },
+            overflowY: "auto",
+            overflowX: "hidden",
+            overscrollBehavior: "contain",
             p: { xs: 3, md: 5 },
+            scrollbarWidth: "thin",
+            scrollbarColor: "rgba(91,241,196,0.45) rgba(255,255,255,0.05)",
             "&::before": {
               content: '""',
               position: "absolute",
               inset: 0,
               pointerEvents: "none",
+              background: `
+                radial-gradient(circle at 12% 0%, rgba(91,241,196,0.16), transparent 34%),
+                radial-gradient(circle at 92% 18%, rgba(143,183,255,0.14), transparent 30%),
+                repeating-linear-gradient(135deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 9px)
+              `,
+            },
+            "&::after": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 2,
+              pointerEvents: "none",
               background:
-                "radial-gradient(circle at 12% 0%, rgba(91,241,196,0.14), transparent 36%)",
+                "linear-gradient(90deg, rgba(91,241,196,0.9), rgba(143,183,255,0.7), transparent)",
             },
           }}
         >
@@ -570,7 +633,18 @@ export default function AboutMeSection() {
             <CloseIcon fontSize="small" />
           </IconButton>
 
-          <Box sx={{ position: "relative", zIndex: 1, pr: { xs: 4, md: 5 } }}>
+          <Box
+            sx={{
+              position: "relative",
+              zIndex: 1,
+              pr: { xs: 4, md: 5 },
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", md: "minmax(0, 1fr) 240px" },
+              gap: { xs: 3, md: 5 },
+              alignItems: "end",
+            }}
+          >
+            <Box>
             <Typography
               component="p"
               sx={{
@@ -596,43 +670,205 @@ export default function AboutMeSection() {
                 letterSpacing: 0,
               }}
             >
-              Como trabajo y que aporto
+              Como pienso, construyo y aprendo.
             </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                display: { xs: "none", md: "block" },
+                p: 2.2,
+                borderLeft: "1px solid rgba(91,241,196,0.28)",
+                background:
+                  "linear-gradient(135deg, rgba(91,241,196,0.07), rgba(143,183,255,0.05))",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "rgba(91,241,196,0.92)",
+                  fontSize: "0.72rem",
+                  fontWeight: 900,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Focus
+              </Typography>
+              <Typography
+                sx={{
+                  mt: 1.2,
+                  color: "rgba(245,247,251,0.9)",
+                  fontSize: "1.12rem",
+                  fontWeight: 850,
+                  lineHeight: 1.35,
+                }}
+              >
+                Entender bien el sistema antes de escribir la solucion.
+              </Typography>
+            </Box>
           </Box>
 
           <Stack
-            spacing={2}
+            spacing={3}
             sx={{ position: "relative", zIndex: 1, mt: { xs: 3, md: 4 } }}
           >
-            {[
-              "Soy desarrollador Full Stack con una vision end-to-end del producto: arquitectura backend, logica de negocio, interfaz y experiencia de usuario trabajando en la misma direccion.",
-              "Me gusta construir software que no sea solo una demo visual, sino una base mantenible y escalable. Presto atencion a la claridad del codigo, las decisiones de arquitectura y la forma en la que cada pieza aporta valor real al producto.",
-              "Trabajo especialmente comodo en entornos Java/Spring, Next.js, TypeScript y bases de datos relacionales y no relacionales, aplicando principios como SOLID, arquitectura hexagonal y separacion clara de responsabilidades.",
-              "Me gusta trabajar en equipo, escuchar otros puntos de vista y aprender de personas con mas experiencia. Intento aportar claridad, hacer buenas preguntas y mantener una comunicacion directa para que el trabajo avance mejor.",
-              "Soy autocritico y autodidacta: reviso mis decisiones, busco entender el por que de las cosas y aprovecho cada proyecto, tecnologia o problema nuevo como una oportunidad para ganar experiencia real.",
-              "A nivel profesional, valoro la comunicacion clara, la resolucion analitica de problemas, la responsabilidad sobre el trabajo propio y la capacidad de adaptarme rapido cuando el proyecto lo necesita.",
-            ].map((paragraph) => (
-              <Typography
-                key={paragraph}
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: { xs: "1fr", md: "1.2fr 0.8fr" },
+                gap: { xs: 2.5, md: 4 },
+                alignItems: "start",
+              }}
+            >
+              <Stack spacing={1.8}>
+                {[
+                  "Soy desarrollador Full Stack con una vision end-to-end del producto: arquitectura backend, logica de negocio, interfaz y experiencia de usuario trabajando en la misma direccion.",
+                  "Trabajo especialmente comodo con Java, Spring Boot, Next.js, TypeScript y bases de datos relacionales y no relacionales. Me interesa la arquitectura hexagonal porque obliga a pensar en dominio, casos de uso, adaptadores e infraestructura con limites claros.",
+                  "No me interesa solo sacar pantallas: me interesa que el producto tenga una base tecnica que se pueda entender, probar, mantener y ampliar sin rehacerlo todo cada vez que aparece una nueva necesidad.",
+                ].map((paragraph) => (
+                  <Typography
+                    key={paragraph}
+                    sx={{
+                      color: "rgba(216,225,237,0.74)",
+                      fontSize: { xs: "0.98rem", md: "1.05rem" },
+                      lineHeight: 1.78,
+                    }}
+                  >
+                    {paragraph}
+                  </Typography>
+                ))}
+              </Stack>
+
+              <Box
                 sx={{
-                  color: "rgba(216,225,237,0.72)",
-                  fontSize: { xs: "0.98rem", md: "1.05rem" },
-                  lineHeight: 1.75,
+                  p: { xs: 2.2, md: 2.6 },
+                  border: "1px solid rgba(255,255,255,0.10)",
+                  background:
+                    "linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025))",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
                 }}
               >
-                {paragraph}
-              </Typography>
-            ))}
+                <Typography
+                  sx={{
+                    color: "rgba(91,241,196,0.88)",
+                    fontSize: "0.72rem",
+                    fontWeight: 900,
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Mentalidad
+                </Typography>
+                <Typography
+                  sx={{
+                    mt: 1.5,
+                    color: "rgba(245,247,251,0.92)",
+                    fontSize: { xs: "1.18rem", md: "1.34rem" },
+                    fontWeight: 900,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  Primero entender. Luego decidir. Despues construir.
+                </Typography>
+                <Typography
+                  sx={{
+                    mt: 1.8,
+                    color: "rgba(216,225,237,0.62)",
+                    fontSize: "0.94rem",
+                    lineHeight: 1.68,
+                  }}
+                >
+                  Prefiero hacer buenas preguntas, reducir incertidumbre y
+                  elegir soluciones que tengan sentido para el producto y para
+                  el equipo que lo mantiene.
+                </Typography>
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                display: "grid",
+                gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
+                borderTop: "1px solid rgba(255,255,255,0.10)",
+                borderLeft: { sm: "1px solid rgba(255,255,255,0.10)" },
+              }}
+            >
+              {profilePillars.map((pillar) => (
+                <Box
+                  key={pillar.label}
+                  sx={{
+                    p: { xs: 2.2, md: 2.6 },
+                    borderRight: "1px solid rgba(255,255,255,0.10)",
+                    borderBottom: "1px solid rgba(255,255,255,0.10)",
+                    transition:
+                      "background-color 180ms ease, border-color 180ms ease",
+                    "&:hover": {
+                      borderColor: "rgba(91,241,196,0.34)",
+                      backgroundColor: "rgba(91,241,196,0.045)",
+                    },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: "rgba(91,241,196,0.9)",
+                      fontSize: "0.78rem",
+                      fontWeight: 900,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {pillar.label}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      mt: 1.2,
+                      color: "rgba(216,225,237,0.68)",
+                      fontSize: { xs: "0.93rem", md: "0.98rem" },
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {pillar.text}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+
+            <Stack direction="row" flexWrap="wrap" gap={1}>
+              {[
+                "Java",
+                "Spring Boot",
+                "Next.js",
+                "TypeScript",
+                "Arquitectura hexagonal",
+                "SOLID",
+                "Producto",
+                "UX",
+              ].map((tag) => (
+                <Chip
+                  key={tag}
+                  label={tag}
+                  sx={{
+                    height: 31,
+                    color: "rgba(230,238,248,0.86)",
+                    fontSize: "0.74rem",
+                    fontWeight: 850,
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    backgroundColor: "rgba(255,255,255,0.045)",
+                  }}
+                />
+              ))}
+            </Stack>
 
             <Typography
               sx={{
-                pt: 2,
-                mt: 1,
+                p: { xs: 2.2, md: 2.8 },
                 color: "rgba(245,247,251,0.92)",
                 fontSize: { xs: "1.08rem", md: "1.25rem" },
                 fontWeight: 850,
                 lineHeight: 1.45,
-                borderTop: "1px solid rgba(255,255,255,0.10)",
+                borderLeft: "1px solid rgba(91,241,196,0.46)",
+                background:
+                  "linear-gradient(90deg, rgba(91,241,196,0.075), rgba(255,255,255,0.025))",
               }}
             >
               No construyo solo funcionalidades. Construyo sistemas que se
