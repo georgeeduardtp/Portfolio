@@ -84,6 +84,10 @@ export default function PortfolioMotion({ children }: { children: ReactNode }) {
 
   return (
     <div className="portfolio" ref={root} data-motion={motionEnabled ? "active" : "paused"}>
+      <div className="ambient-background" aria-hidden="true">
+        <span className="ambient-glow" />
+        <span className="ambient-grain" />
+      </div>
       <div className="reading-progress" ref={progress} aria-hidden="true" />
       {children}
       {!reducedMotion && (

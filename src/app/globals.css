@@ -17,7 +17,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 button:disabled { cursor: default; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 svg.MuiSvgIcon-root { width: 20px; height: 20px; flex-shrink: 0; }
-.portfolio { overflow-x: clip; color: var(--text); background: radial-gradient(ellipse 60% 26% at 85% 6%, #15342c55, transparent), var(--bg); }
+.portfolio { position: relative; isolation: isolate; overflow-x: clip; color: var(--text); background: var(--bg); }
+.ambient-background { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.ambient-glow { position: absolute; inset: -8%; background: radial-gradient(ellipse 68% 60% at 86% 14%, #3cc88e20, #225c4110 38%, transparent 72%), radial-gradient(ellipse 58% 62% at 5% 85%, #487d9c14, transparent 72%), radial-gradient(ellipse 35% 42% at 44% 55%, #7cd5a10a, transparent 75%); animation: ambient-drift 24s ease-in-out infinite alternate; }
+.ambient-grain { position: absolute; inset: 0; background: url("/background-grain.svg") repeat; background-size: 160px 160px; opacity: .065; mix-blend-mode: screen; }
 .container { width: min(100% - 80px, 1180px); margin-inline: auto; }
 .skip-link { position: fixed; top: -80px; left: 16px; z-index: 1500; padding: 14px 20px; background: var(--accent); color: var(--bg); border-radius: 6px; }
 .skip-link:focus { top: 12px; }
@@ -324,6 +327,7 @@ h2 > span { color: var(--muted); }
 }
 
 @keyframes orbit { to { transform: rotate(360deg); } }
+@keyframes ambient-drift { from { transform: translate3d(-1%, -1%, 0) scale(1); } to { transform: translate3d(2%, 3%, 0) scale(1.04); } }
 @keyframes name-shimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 @keyframes caption-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
 @keyframes portrait-glow { 0%, 100% { opacity: .5; transform: scale(.97); } 50% { opacity: 1; transform: scale(1.06); } }
@@ -372,6 +376,8 @@ h2 > span { color: var(--muted); }
   .contact-section { padding-bottom: 60px; }
 }
 @media (max-width: 600px) {
+  .ambient-glow { opacity: .75; }
+  .ambient-grain { opacity: .045; }
   html { scroll-padding-top: 90px; }
   .container { width: calc(100% - 40px); }
   .nav-inner { min-height: 70px; gap: 14px; }
