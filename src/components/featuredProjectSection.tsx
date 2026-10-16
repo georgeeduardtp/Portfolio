@@ -52,7 +52,7 @@ export default function FeaturedProjectSection() {
         </div>
         <div className="project-copy">
           <p className="eyebrow">Proyecto destacado · SaaS B2B2C</p>
-          <h3>Pelu Go<span>↗</span>
+          <h3>Pelu Go
           </h3>
           <p className="project-lead">Tu próxima cita.<br />Todo un sistema detrás.</p>
           <p>Una plataforma para descubrir peluquerías y reservar servicios. Para los negocios, un espacio donde gestionar su equipo, horarios, disponibilidad e identidad digital.</p>

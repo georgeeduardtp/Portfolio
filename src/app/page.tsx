@@ -4,6 +4,7 @@ import { ArrowDownward, ArrowForward, ArrowOutward, Download, GitHub, LinkedIn }
 import AboutMeSection from "@/src/components/aboutMeSection";
 import FeaturedProjectSection from "@/src/components/featuredProjectSection";
 import PortfolioMotion from "@/src/components/portfolioMotion";
+import WelcomeOverlay from "@/src/components/welcomeOverlay";
 
 const stack = [
   { area: "Backend", tools: "Java · Spring Boot · NestJS" },
@@ -117,6 +118,7 @@ export default function Home() {
         <p>© {new Date().getFullYear()} George Eduard Turcescu</p>
         <a href="#inicio">Volver arriba ↑</a>
       </footer>
+      <WelcomeOverlay />
     </PortfolioMotion>
   );
 }
