@@ -1,6 +1,7 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import CssBaseline from '@mui/material/CssBaseline';
 import type { Metadata } from 'next';
+import './globals.css';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://georgeeduardturcescu.com';
 
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
       'Portfolio de George Eduard Turcescu, desarrollador Full Stack orientado a producto y arquitectura. Construyo soluciones digitales escalables con Java, Spring Boot y Next.js, aplicando criterio técnico, experiencia de usuario y foco en software mantenible.',
     images: [
       {
-        url: '/profile.jpeg',
+        url: '/profile.jpeg?v=c7719a65',
         width: 1200,
         height: 630,
         alt: 'George Eduard Turcescu - Software Developer',
@@ -75,7 +76,7 @@ export const metadata: Metadata = {
     title: 'George Eduard Turcescu | Portfolio',
     description:
       'Portfolio de George Eduard Turcescu, desarrollador Full Stack orientado a producto y arquitectura. Construyo soluciones digitales escalables con Java, Spring Boot y Next.js, aplicando criterio técnico, experiencia de usuario y foco en software mantenible.',
-    images: ['/profile.jpeg'],
+    images: ['/profile.jpeg?v=c7719a65'],
   },
   robots: {
     index: true,
